@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kirby Maze</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+​
+<body>
+    <audio controls volume = "0.6" class = 'coinSound' hidden src=https://s0.vocaroo.com/media/download_temp/Vocaroo_s0bKtBAszxdw.mp3></audio>
+    <audio controls volume = "1" class = 'victorySound'  hidden src=https://s0.vocaroo.com/media/download_temp/Vocaroo_s0dyH44DZNJW.mp3></audio>
+    <audio controls volume = "0.2" class = 'backgroundMusic' hidden src=https://s0.vocaroo.com/media/download_temp/Vocaroo_s06Ss4okoX2b.mp3></audio>
+    <audio controls volume = "1" class = 'whistle' hidden src=https://s0.vocaroo.com/media/download_temp/Vocaroo_s0Z8tOSDR0AK.mp3></audio>
+    <audio controls volume = "1" class = 'loseSound' hidden src=https://s1.vocaroo.com/media/download_temp/Vocaroo_s1O1gpbGjJ8v.mp3></audio>
+    <div class = "center">
+    <span class = "header">
+        <h1>Kirby Maze</h1>
+        <span class = 'time'></span>
+    </span>
+    <span class = "parentFlex">
+      
+      <span class = "flex1">
+        <span id="board"></span>
+      </span>
+      <span class = "flex2">
+        <span class = "highscore"></span>
+        <span class = "list"><p class = "mazesHeader">Mazes:</p></span>
+        <span class = "instructions">
+          <br>
+          <p class = 'instructionsHeader'>Instructions:</p>
+          <p class = 'instructionText'>Run Kirby through the maze before time runs out! You can pick up coins along the way to improve your score and gain more time. Can you get the high score, or will you lead kirby down the wrong path?</p>
+      </span>
+    </span>
+  </div>
+  <div class="modal">
+
+  </div>
+
+</body>
+<script type="text/javascript" src="./src/movement.js"></script>
+<script type="text/javascript" src="./src/index.js"></script>
+</html>
