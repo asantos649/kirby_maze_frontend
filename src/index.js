@@ -309,6 +309,7 @@ function toggleModal() {
               victorySound.play()
               finished = false
             }, 1000);
+          }
         } else {
              modal.innerHTML = `    <div class="modal-content">
                                       <img src = "https://i.imgur.com/1PDG3gO.gif" width = 15% height = 15% align = top>
