@@ -296,7 +296,7 @@ function toggleModal() {
                                   <img src = "https://i.imgur.com/VqdoLgZ.gif" width = 15% height = 15% align = top>
                                   <p class = "finalScore">${score}</p>
                                   <form id = 'name-entry'>
-                                    <input type = 'text' name = 'user' placeholder = 'Name' />
+                                    <input type = 'text' name = 'user' value = 'AAA' placeholder = 'Name' />
                                     <br>
                                     <input class = "close-button" type = 'submit' name = 'submit'>
                                   </form>
