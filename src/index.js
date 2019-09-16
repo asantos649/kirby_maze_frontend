@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let mazeTitle = null
     const nameList = {}
     let wasOnTreasure = false
+    let finished = false
 
     const url = 'https://floating-eyrie-74274.herokuapp.com'
 
@@ -216,6 +217,9 @@ document.addEventListener("DOMContentLoaded", function(){
               coinSound.play()      
               toggleModal()
               clearInterval(timerEvent);
+              if (!(nameList[(parseInt(mazeId)+1)])){
+                finished = true
+              }
             }
             if (newTile.id === "T"){
               score += 20;
@@ -287,7 +291,7 @@ function toggleModal() {
         if (!(nameList[(parseInt(mazeId)+1)])){
           backgroundMusic.pause()
           backgroundMusic.volume = '0'
-          setTimeout(() => victorySound.play(), 1000);
+
           modal.innerHTML = `    <div class="modal-content">
                                   <p class = "win" >YOU WIN!</p>
                                   <img src = "https://i.imgur.com/1PDG3gO.gif" width = 15% height = 15% align = top>
@@ -300,7 +304,11 @@ function toggleModal() {
                                     <input class = "close-button" type = 'submit' name = 'submit'>
                                   </form>
                                 </div>`
-          
+          if (finished) {
+            setTimeout(() => {
+              victorySound.play()
+              finished = false
+            }, 1000);
         } else {
              modal.innerHTML = `    <div class="modal-content">
                                       <img src = "https://i.imgur.com/1PDG3gO.gif" width = 15% height = 15% align = top>
@@ -308,7 +316,7 @@ function toggleModal() {
                                       <img src = "https://i.imgur.com/VqdoLgZ.gif" width = 15% height = 15% align = top>
                                       <p class = "finalScore">${score}</p>
                                       <form id = 'name-entry'>
-                                        <input type = 'text' name = 'user' placeholder = 'Name' />
+                                        <input type = 'text' name = 'user' value = 'AAA' placeholder = 'Name' />
                                         <br>
                                         <input class = "close-button" type = 'submit' name = 'submit'>
                                       </form>
