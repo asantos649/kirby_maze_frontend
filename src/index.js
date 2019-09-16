@@ -140,15 +140,19 @@ document.addEventListener("DOMContentLoaded", function(){
             timerEvent = setInterval(subtractFromCounter, 0500)
             backgroundMusic.play()
           if (e.code === 'ArrowLeft'){
+            e.preventDefault();
             move("left")
           }
           if (e.code === 'ArrowUp'){
+            e.preventDefault();
             move("up")
           }
           if (e.code  === 'ArrowDown'){
+            e.preventDefault();
             move("down")
           }
           if (e.code  === 'ArrowRight'){
+            e.preventDefault();
             move("right")
           }
         }
