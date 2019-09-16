@@ -215,11 +215,11 @@ document.addEventListener("DOMContentLoaded", function(){
             } 
             if (newTile.id === "W"){
               coinSound.play()      
-              toggleModal()
-              clearInterval(timerEvent);
               if (!(nameList[(parseInt(mazeId)+1)])){
                 finished = true
               }
+              toggleModal()
+              clearInterval(timerEvent);
             }
             if (newTile.id === "T"){
               score += 20;
@@ -289,9 +289,6 @@ function toggleModal() {
                               </div>`
     } else{
         if (!(nameList[(parseInt(mazeId)+1)])){
-          backgroundMusic.pause()
-          backgroundMusic.volume = '0'
-
           modal.innerHTML = `    <div class="modal-content">
                                   <p class = "win" >YOU WIN!</p>
                                   <img src = "https://i.imgur.com/1PDG3gO.gif" width = 15% height = 15% align = top>
@@ -305,6 +302,8 @@ function toggleModal() {
                                   </form>
                                 </div>`
           if (finished) {
+            backgroundMusic.pause()
+            backgroundMusic.volume = '0'  
             setTimeout(() => {
               victorySound.play()
               finished = false
@@ -347,6 +346,4 @@ function windowOnClick(event) {
         toggleModal();
     }
 }
-
-
 });
